@@ -113,6 +113,20 @@ body {
 
 .right {
   margin-left: auto;
+  display: flex;
+  /*margin-left: 305px;*/
+}
+
+.nav-contact {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icons {
+  margin-right: 10px;
+  fill: var(--primary-text-color);
 }
 
 .link {
@@ -121,9 +135,12 @@ body {
   color: var(--secondary-text-color);
 }
 
+.link:hover .nav-icons,
+.link:focus .nav-icons,
 .link:hover,
 .link:focus {
   color: var(--accent-text-color);
+  fill: var(--accent-text-color);
 }
 
 .link-active {
@@ -143,12 +160,27 @@ body {
 /* Офрмление блока hero*/
 
 .hero {
+  /* background-color: #2f303a;*/
+  color: var(--white-color);
+  text-align: center;
+}
+
+.container-overlay {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1600px;
+  height: 600px;
+  /*outline: 2px solid brown;*/
   padding-bottom: 200px;
   padding-top: 200px;
   justify-content: center;
-  background-color: #2f303a;
-  color: var(--white-color);
-  text-align: center;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero-logo.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .slogan {
@@ -202,9 +234,19 @@ body {
 .secret {
   display: none;
 }
+.box-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 120px;
+  background: #f5f4fa;
+  border-radius: 4px;
+}
 
 .text-title {
   margin-bottom: 10px;
+  margin-top: 30px;
   color: var(--secondary-text-color);
   font-weight: bold;
   font-size: 14px;
@@ -259,9 +301,94 @@ body {
   line-height: 1, 19;
 }
 
+.masters-socials {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.socials-item {
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+}
+
+.socials-item:last-child {
+  margin-right: 0;
+}
+
+.social-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /*background-color: rgb(62, 62, 131);*/
+}
+
+.social-link:hover,
+.social-link:focus,
+.social-link:hover .social-icons,
+.social-link:focus .social-icons {
+  background-color: var(--accent-text-color);
+  fill: var(--white-color);
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: #afb1b8;
+}
+.social-icons:hover,
+.social-icons:focus {
+  fill: var(--white-color);
+}
+
 .role {
   font-size: 16px;
   line-height: 1.19;
+  margin-bottom: 16px;
+}
+
+/*Оформление блока Постоянные клинты (Clients)*/
+
+.clients {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.company-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-company {
+  /*background: #e5e5e5;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.company-icons {
+  fill: #afb1b8;
+}
+
+.box-company:hover,
+.box-company:focus,
+.company-logo:hover .company-icons,
+.company-logo:focus .company-icons {
+  fill: var(--accent-text-color);
+  border-color: var(--accent-text-color);
 }
 
 /* Офрмление блоков футера */
@@ -303,6 +430,37 @@ body {
   margin-top: 9px;
 }
 
+.box {
+  display: flex;
+  align-items: baseline;
+}
+.box-socials {
+  margin-left: 70px;
+}
+
+.text-social {
+  display: block;
+  margin-bottom: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.adress-socials {
+  display: flex;
+}
+
+.dark {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.white {
+  fill: var(--white-color);
+}
 /* страница Portfolio 
 
 оформление блока фильтров */
@@ -343,6 +501,8 @@ body {
 .filter-fb:hover {
   color: var(--white-color);
   background-color: var(--accent-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .list-fb {
@@ -373,7 +533,6 @@ body {
 .list-poster {
   margin-right: 30px;
   margin-bottom: 30px;
-  /*border: 1px solid #eeeeee;*/
 }
 
 .list-poster:nth-child(3n + 3) {
@@ -382,6 +541,12 @@ body {
 
 .list-poster:nth-last-child(-n + 3) {
   margin-bottom: 0;
+}
+
+.list-poster:focus,
+.list-poster:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .posters {
