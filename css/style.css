@@ -57,8 +57,8 @@ body {
 }
 
 .header {
-  padding-bottom: 32px;
-  padding-top: 32px;
+  padding-bottom: 24px;
+  padding-top: 25px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14x;
@@ -380,13 +380,19 @@ body {
 }
 
 .company-icons {
+  width: 100%;
+  grid-template: 100%;
   fill: #afb1b8;
 }
+.company-link,
+.company-icons {
+  display: block;
+}
 
-.box-company:hover,
-.box-company:focus,
-.company-logo:hover .company-icons,
-.company-logo:focus .company-icons {
+.company-link:hover .box-company,
+.company-link:focus .box-company,
+.company-link:hover .company-icons,
+.company-link:focus .company-icons {
   fill: var(--accent-text-color);
   border-color: var(--accent-text-color);
 }
@@ -495,6 +501,15 @@ body {
   background-color: #f5f4fa;
   text-align: center;
   cursor: pointer;
+  font-family: Roboto;
+  font-style: 400;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 162%;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: #212121;
 }
 
 .filter-fb:focus,
